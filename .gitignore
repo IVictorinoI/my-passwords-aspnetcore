@@ -1,0 +1,10 @@
+*.exe
+*.dll
+*.log
+*.cache
+**/Application/bin/
+**/Application/obj/
+**/Domain/bin/
+**/Domain/obj/
+**/MinhasSenhas/bin/
+**/MinhasSenhas/obj/
