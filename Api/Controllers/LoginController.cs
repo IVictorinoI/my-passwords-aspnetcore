@@ -7,7 +7,6 @@ using Application.Login.Dto;
 using Application.Login.View;
 using Application.Users;
 using Application.Users.Dto;
-using Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

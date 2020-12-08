@@ -2,6 +2,8 @@
 *.dll
 *.log
 *.cache
+**/Api/bin/
+**/Api/obj/
 **/Application/bin/
 **/Application/obj/
 **/Domain/bin/

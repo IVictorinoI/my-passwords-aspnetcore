@@ -7,6 +7,7 @@ using Application.Passwords;
 using Application.Passwords.Dto;
 using Application.Passwords.View;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MinhasSenhas.Base;

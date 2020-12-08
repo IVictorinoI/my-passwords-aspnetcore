@@ -17,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 
 namespace MinhasSenhas
@@ -38,9 +39,10 @@ namespace MinhasSenhas
             services.ConnectOnDatabase(Configuration);
             services.AddSwagger();
 
+            services.AddCors();
+
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
-
 
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
@@ -72,9 +74,17 @@ namespace MinhasSenhas
 
             app.UseRouting();
 
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
+
             app.UseAuthentication();
             app.UseAuthorization();
 
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
